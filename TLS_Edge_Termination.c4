@@ -1,0 +1,14 @@
+model {
+  actor client "Клиент"
+
+  container edgeNode "Edge Node" {
+    description "TLS Terminator, Certificate Validator, Security Headers"
+  }
+
+  container backend "Backend Service" {
+    description "Business Logic"
+  }
+
+  client -> edgeNode "HTTPS-запрос"
+  edgeNode -> backend "HTTP-запрос"
+}

@@ -1,0 +1,264 @@
+specification {
+  color custom #6BD731
+
+  element actor {
+    notation "Person"
+    style {
+      shape person
+      size xsmall
+      color indigo
+    }
+  }
+
+  element microservice {
+    notation "Microservice"
+    style {
+      opacity 10%
+    }
+  }
+
+  
+  element system {
+  notation "Software system"
+  style {
+    opacity 10%
+  }
+}
+  element externalSystem {
+    notation "External System"
+    style {
+      color muted
+      opacity 10%
+      //size small
+    }
+  }
+
+  element externalIntegration {
+    style {
+      color muted
+      opacity 10%
+      border solid
+      //size small
+    }
+  }
+
+  element container {
+    style {
+      opacity 50%
+    }
+  }
+
+  element dotnetApi {
+    notation ".net Api"
+    technology "asp.net/C#"
+    style {
+      icon tech:csharp
+    }
+  }
+
+  element dotnetWorker {
+    notation ".net Worker"
+    technology "asp.net/C#"
+    style {
+      icon tech:csharp
+    }
+  }
+
+  element dotnetSubModule {
+    notation ".net dll"
+    technology ".net/C#"
+  }
+
+  element pythonApi {
+    notation "python Api"
+    technology "FastAPI/Python"
+    style {
+      icon tech:python
+      color amber
+    }
+  }
+
+  element pythonWorker {
+    notation "python Worker"
+    technology "Worker/Python"
+    style {
+      icon tech:python
+      color amber
+    }
+  }
+
+
+  element SPA {
+    notation "ReactJS/TypeScript"
+    technology "ReactJS/TypeScript"
+    style {
+      shape browser
+      icon tech:react
+      //icon https://icon.icepanel.io/Technology/svg/Swift.svg
+    }
+  }
+
+  element embeddedSPA {
+    notation "ReactJS/TypeScript"
+    technology "Компонент ReactJS/TypeScript"
+    style {
+      shape browser
+      icon tech:react
+      color green
+      size small
+      //textSize medium
+      //icon https://icon.icepanel.io/Technology/svg/Swift.svg
+    }
+  }
+
+  element rabbitMQ {
+    notation "Message queue"
+    style {
+      shape queue
+      color red
+      icon tech:rabbitmq
+    }
+  }
+
+  element envoy {
+    notation "API Getaway"
+    technology "envoy"
+    style {
+      color indigo
+      icon tech:envoy
+      size small
+    }
+
+  }
+
+  element database {
+    notation "Database"
+    style {
+      shape storage
+      icon tech:postgresql
+    }
+  }
+
+  element filesStorage {
+    //hdf5Store
+    notation "filesStorage"
+    technology "NFS/HDF5"
+    style {
+      shape storage
+      multiple true
+      color amber
+      //icon azure:azure-fileshares
+      icon gcp:filestore
+    }
+
+  }
+
+  
+  element db-entity {
+    notation "Database Entity"
+    style {
+      color sky
+    }
+  }
+
+  element db-blob {
+    notation "Database Blob"
+    style {
+      color red
+      size xsmall
+      textSize small
+       icon azure:file
+    }
+  }
+
+  element file-entity {
+    notation "File Entity"
+    style {
+      color amber
+    }
+  }
+
+  element aggregate {
+    notation "Domain Aggregate"
+    style {
+      color green
+      opacity 50%
+    }
+  }
+
+  element group {
+    notation "Grouping"
+    style {
+      color green
+      opacity 50%
+    }
+  }
+
+  element lambda {
+    notation "Serverless function"
+    style {
+      icon aws:lambda
+    }
+  }
+
+  relationship uses {
+    color indigo
+    head vee
+    line dotted
+  }
+
+  relationship grpc {
+    technology "gRPC"
+    color sky
+  }
+
+  relationship rest {
+    technology "REST"
+    color gray
+  }
+
+  relationship grpcWeb {
+    technology "gRPC Web"
+  }
+
+  relationship tcp {
+    technology "TCP/IP"
+    color blue
+  }
+
+  relationship fileIO {
+    technology "File/IO"
+    color blue
+  }
+
+
+  relationship embeds {
+    //technology ""
+    color green
+    line solid
+    head odot
+  }
+
+  relationship mqProducing {
+    technology "TCP/IP (Send to exchange)"
+    color red
+  }
+
+  relationship mqConsuming {
+    technology "TCP/IP (Receive from queue)"
+    color red
+  }
+
+  tag deprecated
+  tag next
+  tag api
+  tag db
+  tag logging
+  tag frontend
+  tag domain
+  tag platform-application
+  tag platform-infrastructure
+  tag platform-integration
+  tag complicatedMathCalc
+  tag dotnetModularMonolith
+}
